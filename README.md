@@ -58,3 +58,26 @@ Con eso ya deberías poder realizar commits a través de SSH
 
 ### Troubleshooting
 En caso que no te permita hacer push, revisa con `git remote -v` para que veas si estás apuntando a los repositorios a través de HTTPS o de SSH
+
+## Multiples usuarios en una computadora
+Se pueden crear multiples claves SSH, cada una con nombre diferente para registrarlos en las cuentas correspondientes en Github.
+
+- Creamos un archivo `config` en la carpeta `~/.ssh/`
+- Agregamos lo siguiente
+
+```java
+#Default GitHub
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+Host github-COMPANY
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_COMPANY
+
+  #fijarse que los nombres de las llaves son diferentes
+```
+
+- Verificar que el url de los remotos `git remote -v` están para conectarse con SSH, `git@<host>:<username github>/<nombre repositorio>.git` (i.e. git@github.com:GianniCarlo/Taller-Git.git)
