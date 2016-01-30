@@ -1,0 +1,30 @@
+export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
+
+# Enable tab completion
+source ~/.git-completion.bash
+
+# colors
+green="\[\033[0;32m\]"
+blue="\[\033[0;34m\]"
+red="\[\033[0;31m\]"
+reset="\[\033[0m\]"
+
+#Change command prompt
+source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+export PS1="$red\u$green\$(__git_ps1)$blue \W $ $reset"
+
+export GEM_HOME=$HOME/Software/ruby
+export PATH=$PATH:$HOME/Software/ruby/bin
+
+export PATH=$PATH:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+export PATH=$PATH:/usr/local/packer
+
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://10.0.2.15:2376"
+export DOCKER_CERT_PATH="/Users/Gianni/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
